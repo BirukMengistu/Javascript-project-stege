@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Steg 1</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+        body {
+            font-family: Verdana;
+          
+        }
+        .container {
+            margin: 10px auto 0 auto;
+            width: 100%;
+            max-width: 960px
+        }
+    </style>
+    <script>
+       function calculate(param) {
+         
+            let tal1 = document.getElementById('tal-1').value;
+            let tal2 = document.getElementById('tal-2').value;
+
+            if (tal1.length == 0 || tal2 == 0) {
+                alert('Ett tal värde saknas!');
+                return;
+            }
+            if (param == "add") {
+                var result = Number(tal1) + Number(tal2);
+            }
+            else  if (param == "sub") {
+                var result = Number(tal1) - Number(tal2);
+            }
+            else  if (param == "mult") {
+                var result = Number(tal1) * Number(tal2);
+            }
+            else  if (param == "div") {
+                var result = Number(tal1) / Number(tal2);
+            }
+           document.getElementById('result').innerHTML = result;
+           console.log(result);
+       }
+
+      
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkylator</h1>
+
+        <input type="text" id="tal-1" maxlength="10" class="is-numeric" /> 
+        <br><br>
+        <input type="text" id="tal-2"  maxlength="8" class="is-numeric" />  
+        <br></br>
+        <div id="result" style="font-weight: bold;"></div>
+        <br></br>
+        <button onclick="calculate('add')">+</button>
+        <button onclick="calculate('sub')">-</button>
+        <button onclick="calculate('mult')">*</button>
+        <button onclick="calculate('div')">/</button>
+
+    </div>
+    
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var classes = document.getElementsByClassName('is-numeric');
+        for (var i = 0; i < classes.length; ++i) {
+            classes[i].addEventListener("keypress", function (event) {
+                if (window.event) {                     
+                    keyCode = event.keyCode; // IE
+                } 
+                else {                   
+                    keyCode = event.which;  // Netscape/Firefox/Opera
+                 }
+                if (!(keyCode >= 48 && keyCode <= 57)) {
+                    event.preventDefault();
+                }
+            });
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

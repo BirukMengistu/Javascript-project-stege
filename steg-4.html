@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Steg 1</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+        body {
+            font-family: Verdana;
+        }
+    </style>
+    <script>
+       function hello() {
+           var myName = document.getElementById('my-name').value;
+           document.getElementById('hello-message').innerHTML = 'Hej ' + myName;
+       }
+    </script>
+</head>
+<body>
+    <h1 id="hello-message">Steg programmet</h1>
+
+    <input type="text" id="my-name" />
+    <button onclick="hello()">Say Hej</button>
+
+</body>
+</html>

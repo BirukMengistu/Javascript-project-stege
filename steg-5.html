@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Steg 1</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+        body {
+            font-family: Verdana;
+          
+        }
+        .container {
+            margin: 10px auto 0 auto;
+            width: 100%;
+            max-width: 960px
+        }
+    </style>
+    <script>
+       function calculate() {
+           let tal1 = document.getElementById('tal-1').value;
+           let tal2 = document.getElementById('tal-2').value;
+           let result = Number(tal1) + Number(tal2);
+           document.getElementById('result').innerHTML = result;
+       }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Beräkningar addition</h1>
+
+        <input type="text" id="tal-1" /> 
+        <br><br>
+        <input type="text" id="tal-2" /> 
+        <br></br>
+        <div id="result" style="font-weight: bold;"></div>
+        <br></br>
+        <button onclick="calculate()">Addera</button>
+    </div>
+    
+</body>
+</html>

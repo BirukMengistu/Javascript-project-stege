@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Steg 9 - Valuta räknare</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+        body {
+            font-family: Verdana;
+        }
+        .container {
+            margin: 10px auto 0 auto;
+            width: 100%;
+            max-width: 960px
+        }
+    </style>
+    <script src="js/simple-helper.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCountries();
+        });
+        
+        var Countries = Array();
+
+        function loadCountries() {
+            let country = {};
+            country.name ="Sverige";
+            country.capital = "Stockholm";
+            country.currency = "SEK";
+            Countries.push(country);
+            
+            country = {};
+            country.name ="Finland";
+            country.capital = "Helsingfors";
+            country.currency = "EUR";
+            Countries.push(country);
+
+            country = {};
+            country.name ="USA";
+            country.capital = "Washington";
+            country.currency = "USD";
+            Countries.push(country);
+
+            country = {};
+            country.name ="Storbritanien";
+            country.capital = "London";
+            country.currency = "GBP";
+            Countries.push(country);
+           
+               /*
+                    country.exchangeRate = 8.87; // us
+                    country.exchangeRate = 11.42 /uk
+                    country.exchangeRate = 10,413
+                */
+
+            let html = '<table style="width: 400px">';
+            for (let i=0; i<Countries.length; i++) {
+                html += '<tr>';
+                    html += '<td>' + Countries[i].name + '</td>';
+                    html += '<td>' + Countries[i].capital + '<td>';
+                html += '</tr>';     
+            }
+            html += '</table>';
+            Helper.setHtml('country-list', html);
+            /*
+            for (let i = 0; i < Countries.length; i++) {
+                alert(Countries[i].name + ' ' + Countries[i].value);
+            }
+            */
+        
+            //console.log(Countries);
+            //alert(JSON.stringify(Countries));
+        }
+
+        /*
+            Lägga till 2 länder USA och Storbritanien
+            Lägg även till property valuta till vaje, med resp, kod, dvs SEK USD, EUR, GBP
+        /*
+        for (let i = 0; i < countries.length; i++) {
+            alert(countries[i]);
+        }
+        */
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Länder</h1>
+        <div id="country-list"></div>
+    </div>
+
+</body>
+</html>
