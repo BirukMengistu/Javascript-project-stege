@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Steg 9 - Valuta räknare</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <style>
+        body {
+            font-family: Verdana;
+        }
+        .container {
+            margin: 10px auto 0 auto;
+            width: 100%;
+            max-width: 960px
+        }
+    </style>
+    <script src="./simple-helper.js"></script>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCountries();
+        });
+        
+       var Countries = Array();
+
+        function loadCountries() {
+            let country = {};
+            country.name='SWEDEN'
+            country.currency = "SEK";
+            Countries.push(country);
+            country = {};
+            country.name='NORWAY'
+            country.currency = "NOK";
+            Countries.push(country);
+            country = {};
+            country.name='ETHIOPIAN'
+            country.currency = "ETB";
+            Countries.push(country);
+            country = {};
+            country.name='BAHRAIN'
+            country.currency = "BHD";
+            Countries.push(country);
+            country = {};
+            country.name='BRAZIL'
+            country.currency = "BRL";
+            Countries.push(country);
+            country = {};
+            country.name='GERMANY'
+            country.currency = "EUR";
+            Countries.push(country);
+
+            country = {};
+            country.name='USA'
+            country.currency = "USD";
+            Countries.push(country);
+
+            country = {};
+            country.name='ENGLAND'
+            country.currency = "GBP";
+            Countries.push(country);
+
+            let html_from = '<select id="from_currency" style="width: 150px;   height: 40px;">';
+            for (let i=0; i<Countries.length; i++) {
+               
+                html_from  += `<option value = ${Countries[i].currency}> ${Countries[i].name} </option>`;
+                   
+                
+            }
+            html_from  += '</select>';
+            Helper.setHtml('from_currency', html_from );
+
+            let html_to = '<select id="to_currency" style="width: 150px;   height: 40px;">';
+
+            for (let i=0; i<Countries.length; i++) {
+               
+                html_to +=  `<option value = ${Countries[i].currency}>  ${Countries[i].name}   </option>`;
+                   
+                
+            }
+            html_to += '</select>';
+            Helper.setHtml('to_currency', html_to);
+
+            
+            /*
+            for (let i = 0; i < Countries.length; i++) {
+                alert(Countries[i].name + ' ' + Countries[i].value);
+            }
+            */
+        
+            //console.log(Countries);
+            //alert(JSON.stringify(Countries));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Country currency converter</h1>
+        <h1>from-</h1>
+        <div> 
+            <input type = 'number' id ='from_amount' placeholder="0" />
+            <div id="from_currency"> </div>
+        </div>
+        
+
+        <h1>To-</h1>
+        <div>
+            <input type = 'number' id ='to_amount'  disabled/>
+        <div id="to_currency"></div>
+        </div>
+        <button class="middle">Exchange</button>   
+       
+    </div>
+    <div>
+        
+        <div class="rate" id="rate">
+
+        </div>
+    </div>
+    
+</body>
+</html>

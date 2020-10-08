@@ -137,3 +137,8 @@ html {
   }
   /* ----- Reset end ----- */ 
   
+  #from-country select{
+    height: 600px;
+    font-size: medium;
+    font-style: normal;
+  }
